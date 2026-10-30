@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E.E.S.T. N° 6 &bull; Alex Fabian Siles Valeriano &bull; One Piece Interactivo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="pb-5">
+
+    <nav class="navbar navbar-dark navbar-one-piece mb-4 shadow sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span class="navbar-brand mb-0 h1 fw-bold"><i class="bi bi-mortarboard-fill text-warning me-2"></i>E.E.S.T. N° 6</span>
+            <span class="badge bg-warning text-dark px-3 py-2 fw-semibold"><i class="bi bi-person-fill me-1"></i> Alex Fabian Siles Valeriano</span>
+        </div>
+    </nav>
+
+    <div class="container" style="max-width: 940px;">
+
+        <div class="text-center mb-4">
+            <span class="badge bg-dark border border-warning text-warning px-3 py-2 mb-2 fs-6">
+                <i class="bi bi-mortarboard-fill me-1"></i> E.E.S.T. N° 6 &bull; Proyecto Web Frontend
+            </span>
+            <h1 class="h2 fw-bold text-white mb-1">☠️ ONE PIECE &mdash; Ficha Interactiva de Personajes</h1>
+            <p class="text-light opacity-75 small mb-0">Cartel Oficial de Recompensas de la Marina &bull; Alumno: <strong>Alex Fabian Siles Valeriano</strong></p>
+        </div>
+
+        <div class="mb-3">
+            <p class="text-warning small fw-bold text-uppercase mb-2 px-1"><i class="bi bi-people-fill me-1"></i> Selecciona un Tripulante:</p>
+            <div class="selector-tripulacion">
+                <button type="button" class="btn-personaje activo" data-id="luffy"><img src="img/luffy.jpg" alt="Luffy" class="avatar-mini"><span>Luffy <small class="text-warning">(Capitán)</small></span></button>
+                <button type="button" class="btn-personaje" data-id="zoro"><img src="img/zoro.jpg" alt="Zoro" class="avatar-mini"><span>Zoro <small class="text-success">(Espadachín)</small></span></button>
+                <button type="button" class="btn-personaje" data-id="sanji"><img src="img/sanji.jpg" alt="Sanji" class="avatar-mini"><span>Sanji <small class="text-info">(Cocinero)</small></span></button>
+                <button type="button" class="btn-personaje" data-id="nami"><img src="img/nami.jpg" alt="Nami" class="avatar-mini"><span>Nami <small class="text-warning">(Navegante)</small></span></button>
+                <button type="button" class="btn-personaje" data-id="chopper"><img src="img/chopper.jpg" alt="Chopper" class="avatar-mini"><span>Chopper <small class="text-danger">(Médico)</small></span></button>
+                <button type="button" class="btn-personaje" data-id="robin"><img src="img/robin.jpg" alt="Robin" class="avatar-mini"><span>Robin <small class="text-secondary">(Arqueóloga)</small></span></button>
+            </div>
+        </div>
+
+        <div id="contenedor-cartel-dinamico" class="tarjeta-recompensa">
+            <div class="row align-items-start g-4">
+                <div class="col-md-5 text-center">
+                    <div class="contenedor-img-wanted mb-3 shadow">
+                        <img id="img-personaje-wanted" src="img/luffy.jpg" alt="Monkey D. Luffy" class="img-fluid img-personaje">
+                        <div class="sello-recompensa-overlay">
+                            <span><i class="bi bi-shield-shaded me-1"></i> GOBIERNO MUNDIAL</span><span>OFICIAL</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center gap-2">
+                        <span id="badge-rol" class="badge bg-danger px-2 py-1">Capitán</span>
+                        <span id="badge-origen" class="badge bg-dark border border-secondary px-2 py-1">Villa Foosha (East Blue)</span>
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <h5 class="titulo-wanted mb-0">DEAD OR ALIVE</h5>
+                        <span class="subtitulo-marine">ORDEN DE CAPTURA</span>
+                    </div>
+                    <h2 id="nombre-personaje" class="fw-bold mb-0 text-dark">Monkey D. Luffy</h2>
+                    <p id="epiteto-personaje" class="small text-danger fw-semibold mb-3">«Sombrero de Paja» (Mugiwara)</p>
+
+                    <div class="caja-recompensa mb-3">
+                        <small class="etiqueta-recompensa text-uppercase d-block"><i class="bi bi-cash-coin me-1"></i> Recompensa de la Marina:</small>
+                        <div id="monto-recompensa" class="monto">฿ 30,000,000 (Saga East Blue)</div>
+                    </div>
+
+                    <div id="info-habilidad" class="caja-habilidad mb-3">
+                        <h6 id="titulo-habilidad" class="fw-bold text-danger mb-1"><i class="bi bi-stars"></i> Fruta del Diablo:</h6>
+                        <p class="small mb-1 text-dark"><strong id="nombre-habilidad">Hito Hito no Mi: Modelo Nika</strong></p>
+                        <p id="desc-habilidad" class="small mb-0 text-muted">Anteriormente conocida como Gomu Gomu no Mi. Convierte su cuerpo en goma y le otorga la libertad absoluta del Dios del Sol.</p>
+                    </div>
+
+                    <button type="button" id="btn-ver-fruta" class="btn btn-warning text-dark btn-sm shadow-sm mt-2">
+                        <i class="bi bi-eye"></i> Ver Habilidad Secreta
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <section class="seccion-galeria">
+            <div class="text-center mb-4"><h3 class="titulo-seccion">☠️ Galería de la Tripulación</h3></div>
+            <div class="row g-4" id="grid-tripulantes">
+                <div class="col-md-4 col-sm-6">
+                    <div class="tarjeta-tripulante">
+                        <div>
+                            <img src="img/luffy.jpg" alt="Monkey D. Luffy" class="img-tripulante-grid">
+                            <h5 class="fw-bold text-white mb-1">Monkey D. Luffy</h5>
+                            <span class="badge bg-danger mb-2">Capitán</span>
+                            <div class="text-warning fw-bold small mb-2">฿ 3,000,000,000</div>
+                            <p class="text-white-50 small mb-3">Usuario de la fruta Hito Hito no Mi modelo Nika y líder indiscutido.</p>
+                        </div>
+                        <button type="button" class="btn btn-outline-warning btn-sm btn-ver-personaje-grid w-100" data-id="luffy"><i class="bi bi-search me-1"></i> Ver Ficha Completa</button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="tarjeta-tripulante">
+                        <div>
+                            <img src="img/zoro.jpg" alt="Roronoa Zoro" class="img-tripulante-grid">
+                            <h5 class="fw-bold text-white mb-1">Roronoa Zoro</h5>
+                            <span class="badge bg-success mb-2">Espadachín</span>
+                            <div class="text-warning fw-bold small mb-2">฿ 1,111,000,000</div>
+                            <p class="text-white-50 small mb-3">Maestro del Santoryu, portador de Enma y futuro mejor espadachín.</p>
+                        </div>
+                        <button type="button" class="btn btn-outline-warning btn-sm btn-ver-personaje-grid w-100" data-id="zoro"><i class="bi bi-search me-1"></i> Ver Ficha Completa</button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="tarjeta-tripulante">
+                        <div>
+                            <img src="img/sanji.jpg" alt="Vinsmoke Sanji" class="img-tripulante-grid">
+                            <h5 class="fw-bold text-white mb-1">Vinsmoke Sanji</h5>
+                            <span class="badge bg-primary mb-2">Cocinero</span>
+                            <div class="text-warning fw-bold small mb-2">฿ 1,032,000,000</div>
+                            <p class="text-white-50 small mb-3">Experto en Pierna Negra, llamas de Ifrit Jambe y protector de damas.</p>
+                        </div>
+                        <button type="button" class="btn btn-outline-warning btn-sm btn-ver-personaje-grid w-100" data-id="sanji"><i class="bi bi-search me-1"></i> Ver Ficha Completa</button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="tarjeta-tripulante">
+                        <div>
+                            <img src="img/nami.jpg" alt="Nami" class="img-tripulante-grid">
+                            <h5 class="fw-bold text-white mb-1">Nami</h5>
+                            <span class="badge bg-warning text-dark mb-2">Navegante</span>
+                            <div class="text-warning fw-bold small mb-2">฿ 366,000,000</div>
+                            <p class="text-white-50 small mb-3">La gata ladrona, domadora de Zeus y genio de la climatología marina.</p>
+                        </div>
+                        <button type="button" class="btn btn-outline-warning btn-sm btn-ver-personaje-grid w-100" data-id="nami"><i class="bi bi-search me-1"></i> Ver Ficha Completa</button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="tarjeta-tripulante">
+                        <div>
+                            <img src="img/chopper.jpg" alt="Tony Tony Chopper" class="img-tripulante-grid">
+                            <h5 class="fw-bold text-white mb-1">Tony Tony Chopper</h5>
+                            <span class="badge bg-danger mb-2">Médico</span>
+                            <div class="text-warning fw-bold small mb-2">฿ 1,000 (Mascota)</div>
+                            <p class="text-white-50 small mb-3">Amante del algodón de azúcar, médico brillante y gigante en Monster Point.</p>
+                        </div>
+                        <button type="button" class="btn btn-outline-warning btn-sm btn-ver-personaje-grid w-100" data-id="chopper"><i class="bi bi-search me-1"></i> Ver Ficha Completa</button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="tarjeta-tripulante">
+                        <div>
+                            <img src="img/robin.jpg" alt="Nico Robin" class="img-tripulante-grid">
+                            <h5 class="fw-bold text-white mb-1">Nico Robin</h5>
+                            <span class="badge bg-secondary mb-2">Arqueóloga</span>
+                            <div class="text-warning fw-bold small mb-2">฿ 930,000,000</div>
+                            <p class="text-white-50 small mb-3">Sobreviviente de Ohara, usuaria de la Hana Hana no Mi y lectora de Poneglyphs.</p>
+                        </div>
+                        <button type="button" class="btn btn-outline-warning btn-sm btn-ver-personaje-grid w-100" data-id="robin"><i class="bi bi-search me-1"></i> Ver Ficha Completa</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="pie-pagina">
+            <div class="nombre-alumno mb-1"><i class="bi bi-person-circle text-warning me-2"></i>Alex Fabian Siles Valeriano</div>
+            <div class="nombre-escuela small">Escuela de Educación Secundaria Técnica N° 6 (E.E.S.T. N° 6)</div>
+        </footer>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
